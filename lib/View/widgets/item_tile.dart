@@ -14,8 +14,8 @@ class _ItemTileState extends State<ItemTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
-      width:300,
+      height: 212,
+      width:212,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(10),
@@ -24,13 +24,10 @@ class _ItemTileState extends State<ItemTile> {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 70,
-            height: 70,
-            child: Image(
-              image: NetworkImage(widget.itemTileMap['image url']),
-              fit: BoxFit.fill,
-            ),
+          Image.network(widget.itemTileMap['image url'],
+          fit: BoxFit.fill,
+          width: 200,
+          height: 130,
           ),
           Text('${widget.itemTileMap['productName']}'),
           Text('in stock:${widget.itemTileMap['in stock'] }')
@@ -38,4 +35,5 @@ class _ItemTileState extends State<ItemTile> {
       ),
     );
   }
+  
 }
